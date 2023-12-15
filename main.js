@@ -1,27 +1,52 @@
 const startMinutes = 0.05;
+const startSeconds = 0;
 let time = startMinutes * 60;
 
-const countdownParragraph = document.getElementById("countdown");
+const countdownParagraph = document.querySelector("#countdown");
 
-setInterval(updateCountdown, 1000)
+const startButton = document.querySelector("#startButton");
+const stopParagraph = document.querySelector("#stopParagraph");
 
-function playAlarm() {
-    let alarmSound = new Audio("alarm.wav");
-    alarmSound.play();
+
+let id;
+
+startButton.addEventListener("click", e => {
+    if (startButton.innerHTML == "Start") {
+        id = setInterval(updateCountdown, 1000);
+        startButton.innerHTML = "Stop"
+    } else if (startButton.innerHTML == "Stop") {
+        clearInterval(id);
+        startButton.innerHTML = "Start"
+        console.log(id);
+    }
+})
+
+
+const playAlarm = () => {
+    setTimeout(
+        function() {
+            let alarmSound = new Audio("alarm.wav")
+            alarmSound.play()
+        }, 500);
 }
 
-function updateCountdown() {
-    if (time >= 0) {
+const updateCountdown = () => {
+    if (time > 0) {
         const minutes = Math.floor(time/60);
         let seconds = time % 60;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        countdownParragraph.innerHTML = `${minutes}:${seconds}`;
+        countdownParagraph.innerHTML = `${minutes}:${seconds}`;
         time--;
-    } else {
-        setInterval(playAlarm, 1000);
-        countdownParragraph.innerHTML = "Time's up ⏰⏰⏰";
+    } else if (time == 0) {
+        time--;
+        playAlarm();
+        countdownParagraph.innerHTML = `Time's up!!!`
+
     }
 }
 
+const reset = () => {
+    time
+}
 
