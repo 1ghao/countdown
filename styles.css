@@ -9,22 +9,12 @@ h1 {
     font-size: 3.5rem;
 }
 
-p {
-    text-align: center;
-    font-size: 2rem;
-    justify-content: center;
-    margin: 0;
-    background-color: rgb(240, 240, 240);
-    border: 0;
-    width: 0.rem
-}
-
 .countdownButtonsDiv, .countdownDiv {
     display: flex;
     justify-content: center;
 }
 
-.countdown {
+.countdown, p {
     text-align: center;
     font-size: 3rem;
     justify-content: center;
@@ -32,6 +22,10 @@ p {
     background-color: rgb(240, 240, 240);
     border: 0;
     padding: 0;
+}
+
+.countdown:hover {
+    background-color: rgba(200, 200, 200);
 }
 
 .cronoButton {

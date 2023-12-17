@@ -1,13 +1,17 @@
-let countdownMinutes = document.querySelector("#minutes");
-let countdownSeconds = document.querySelector("#seconds");
+const countdownMinutes = document.querySelector("#minutes");
+const countdownSeconds = document.querySelector("#seconds");
+const minutes = countdownMinutes.innerHTML;
+const seconds = countdownSeconds.innerHTML;
 let time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
 
 
 const startButton = document.querySelector("#startButton");
-const stopParagraph = document.querySelector("#stopParagraph");
+const resetButton = document.querySelector("#resetButton");
 
 
-let id;
+// start button event listener
+
+let id; /*interval's id*/
 
 startButton.addEventListener("click", e => {
     if (startButton.innerHTML == "Start") {
@@ -20,6 +24,20 @@ startButton.addEventListener("click", e => {
 })
 
 
+
+resetButton.addEventListener("click", e => {
+    clearInterval(id);
+    startButton.innerHTML = "Start"
+    countdownMinutes.innerHTML = 25;
+    countdownSeconds.innerHTML = "00";
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+})
+
+
+
+
+// alarm sound function 
+
 const playAlarm = () => {
     setTimeout(
         function() {
@@ -27,6 +45,9 @@ const playAlarm = () => {
             alarmSound.play()
         }, 500);
 }
+
+
+// count down function 
 
 const updateCountdown = () => {
     if (time > 0) {
@@ -43,9 +64,5 @@ const updateCountdown = () => {
         countdownParagraph.innerHTML = `Time's up!!!`
 
     }
-}
-
-const reset = () => {
-    time
 }
 
