@@ -9,13 +9,14 @@
 <body>
     <h1>Countdown</h1>
     <div class="countdownDiv">
-        <input type="number" id="countdown" class="countdown" value="10"/>
-        <p>:</p>
-        <input type="number" class="countdown" value="00" />
+        <p class="countdown" id="minutes">25</p>
+        <p class="countdown">:</p>
+        <p class="countdown" id="seconds">00</p>
     </div>
-
-    <button class="cronoButton" id="startButton">Start</button>
-    <p id="resetParagraph"></p>
+    <div class="countdownButtonsDiv">
+        <button class="cronoButton" id="startButton">Start</button>
+        <button class="cronoButton" id="resetButton">Reset</button>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

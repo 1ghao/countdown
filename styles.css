@@ -19,14 +19,14 @@ p {
     width: 0.rem
 }
 
-.countdownDiv {
+.countdownButtonsDiv, .countdownDiv {
     display: flex;
     justify-content: center;
 }
 
 .countdown {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     justify-content: center;
     margin: 0;
     background-color: rgb(240, 240, 240);
@@ -38,7 +38,7 @@ p {
     background-color: white;
     text-align: center;
     display: grid;
-    margin: auto;
+    margin: 1rem 1rem 0px 1rem;
     border-style: solid;
     border-width: 2px;
     font-size: 1.5rem;

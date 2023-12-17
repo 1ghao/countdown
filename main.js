@@ -1,8 +1,7 @@
-const startMinutes = 0.05;
-const startSeconds = 0;
-let time = startMinutes * 60;
+let countdownMinutes = document.querySelector("#minutes");
+let countdownSeconds = document.querySelector("#seconds");
+let time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
 
-const countdownParagraph = document.querySelector("#countdown");
 
 const startButton = document.querySelector("#startButton");
 const stopParagraph = document.querySelector("#stopParagraph");
@@ -17,7 +16,6 @@ startButton.addEventListener("click", e => {
     } else if (startButton.innerHTML == "Stop") {
         clearInterval(id);
         startButton.innerHTML = "Start"
-        console.log(id);
     }
 })
 
@@ -36,7 +34,8 @@ const updateCountdown = () => {
         let seconds = time % 60;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        countdownParagraph.innerHTML = `${minutes}:${seconds}`;
+        countdownMinutes.innerHTML = `${minutes}`;
+        countdownSeconds.innerHTML = `${seconds}`;
         time--;
     } else if (time == 0) {
         time--;
