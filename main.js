@@ -19,7 +19,6 @@ countdownMinutes.addEventListener("click", e => {
         
         minutes = countdownMinutes.innerHTML;
         seconds = countdownSeconds.innerHTML;
-        console.log(minutes);
     } while (countdownMinutes.innerHTML < 0 || countdownMinutes.innerHTML == "NaN");
 })
 
