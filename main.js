@@ -1,15 +1,46 @@
-const countdownMinutes = document.querySelector("#minutes");
-const countdownSeconds = document.querySelector("#seconds");
-const minutes = countdownMinutes.innerHTML;
-const seconds = countdownSeconds.innerHTML;
-let time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
-
+let countdownMinutes = document.querySelector("#minutes");
+let countdownSeconds = document.querySelector("#seconds");
+let time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML) - 1;
+let minutes = countdownMinutes.innerHTML;
+let seconds = countdownSeconds.innerHTML;
 
 const startButton = document.querySelector("#startButton");
 const resetButton = document.querySelector("#resetButton");
 
 
-// start button event listener
+
+// minutes selector 
+
+countdownMinutes.addEventListener("click", e => {
+    do {
+        countdownMinutes.innerHTML = parseInt(prompt("Minutes:"));
+        
+        time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML) - 1;
+        
+        minutes = countdownMinutes.innerHTML;
+        seconds = countdownSeconds.innerHTML;
+        console.log(minutes);
+    } while (countdownMinutes.innerHTML < 0 || countdownMinutes.innerHTML == "NaN");
+})
+
+
+
+// seconds selector 
+
+countdownSeconds.addEventListener("click", e => {
+    do {
+        countdownSeconds.innerHTML = parseInt(prompt("Seconds:"));
+        countdownSeconds.innerHTML = countdownSeconds.innerHTML < 10 ? "0" + countdownSeconds.innerHTML : countdownSeconds.innerHTML;
+
+        time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML) - 1;
+        
+        minutes = countdownMinutes.innerHTML;
+        seconds = countdownSeconds.innerHTML;
+    } while (countdownSeconds.innerHTML < 0 || countdownSeconds.innerHTML == "NaN");
+})
+
+
+// start button
 
 let id; /*interval's id*/
 
@@ -24,12 +55,14 @@ startButton.addEventListener("click", e => {
 })
 
 
+// reset button 
+
 
 resetButton.addEventListener("click", e => {
     clearInterval(id);
     startButton.innerHTML = "Start"
-    countdownMinutes.innerHTML = 25;
-    countdownSeconds.innerHTML = "00";
+    countdownMinutes.innerHTML = minutes;
+    countdownSeconds.innerHTML = seconds;
     time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
 })
 
