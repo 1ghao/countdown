@@ -26,6 +26,7 @@ h1 {
 
 .countdown:hover {
     background-color: rgba(200, 200, 200);
+    cursor: default;
 }
 
 .cronoButton {
