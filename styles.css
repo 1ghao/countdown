@@ -9,9 +9,12 @@ h1 {
     font-size: 3.5rem;
 }
 
-.countdownButtonsDiv, .countdownDiv {
+.countdownButtonsDiv, .countdownDiv, .quickAccess {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1em auto;
 }
 
 .countdown, p {
@@ -32,8 +35,7 @@ h1 {
 .cronoButton {
     background-color: white;
     text-align: center;
-    display: grid;
-    margin: 1rem 1rem 0px 1rem;
+    margin: 0.2em;
     border-style: solid;
     border-width: 2px;
     font-size: 1.5rem;
@@ -41,10 +43,4 @@ h1 {
 
 .cronoButton:hover {
     background-color: rgba(200, 200, 200);
-}
-
-.quickAccess {
-    display: flex;
-    justify-content: center;
-    margin: 5em;
 }

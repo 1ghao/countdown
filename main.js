@@ -15,6 +15,8 @@ const minute30 = document.querySelector("#minute30");
 const minute45 = document.querySelector("#minute45");
 const minute60 = document.querySelector("#minute60");
 
+const plus5 = document.querySelector("#plus5");
+const minus5 = document.querySelector("#minus5");
 
 
 // minutes selector 
@@ -64,7 +66,6 @@ startButton.addEventListener("click", e => {
 
 // reset button 
 
-
 resetButton.addEventListener("click", e => {
     clearInterval(id);
     startButton.innerHTML = "Start"
@@ -105,6 +106,7 @@ const updateCountdown = () => {
 
     }
 };
+
 
 // quick access buttons 
 
@@ -149,3 +151,18 @@ minute60.addEventListener("click", e => {
     minutes = countdownMinutes.innerHTML;
     time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
 });
+
+
+// add and substract time 
+
+plus5.addEventListener("click", e => {
+    countdownMinutes.innerHTML = parseInt(countdownMinutes.innerHTML) + 5;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});
+
+minus5.addEventListener("click", e => {
+    countdownMinutes.innerHTML = parseInt(countdownMinutes.innerHTML) + 5;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+})
