@@ -7,6 +7,14 @@ let seconds = countdownSeconds.innerHTML;
 const startButton = document.querySelector("#startButton");
 const resetButton = document.querySelector("#resetButton");
 
+const minute5 = document.querySelector("#minute5");
+const minute10 = document.querySelector("#minute10");
+const minute15 = document.querySelector("#minute15");
+const minute25 = document.querySelector("#minute25");
+const minute30 = document.querySelector("#minute30");
+const minute45 = document.querySelector("#minute45");
+const minute60 = document.querySelector("#minute60");
+
 
 
 // minutes selector 
@@ -20,7 +28,7 @@ countdownMinutes.addEventListener("click", e => {
         minutes = countdownMinutes.innerHTML;
         seconds = countdownSeconds.innerHTML;
     } while (countdownMinutes.innerHTML < 0 || countdownMinutes.innerHTML == "NaN");
-})
+});
 
 
 
@@ -36,7 +44,7 @@ countdownSeconds.addEventListener("click", e => {
         minutes = countdownMinutes.innerHTML;
         seconds = countdownSeconds.innerHTML;
     } while (countdownSeconds.innerHTML < 0 || countdownSeconds.innerHTML == "NaN");
-})
+});
 
 
 // start button
@@ -51,7 +59,7 @@ startButton.addEventListener("click", e => {
         clearInterval(id);
         startButton.innerHTML = "Start"
     }
-})
+});
 
 
 // reset button 
@@ -63,7 +71,7 @@ resetButton.addEventListener("click", e => {
     countdownMinutes.innerHTML = minutes;
     countdownSeconds.innerHTML = seconds;
     time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
-})
+});
 
 
 
@@ -76,7 +84,7 @@ const playAlarm = () => {
             let alarmSound = new Audio("alarm.wav")
             alarmSound.play()
         }, 500);
-}
+};
 
 
 // count down function 
@@ -96,5 +104,48 @@ const updateCountdown = () => {
         countdownParagraph.innerHTML = `Time's up!!!`
 
     }
-}
+};
 
+// quick access buttons 
+
+minute5.addEventListener("click", e => {
+    countdownMinutes.innerHTML = 5;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});
+
+minute10.addEventListener("click", e => {
+    countdownMinutes.innerHTML = 10;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});
+
+minute15.addEventListener("click", e => {
+    countdownMinutes.innerHTML = 15;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});
+
+minute25.addEventListener("click", e => {
+    countdownMinutes.innerHTML = 25;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});
+
+minute30.addEventListener("click", e => {
+    countdownMinutes.innerHTML = 30;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});
+
+minute45.addEventListener("click", e => {
+    countdownMinutes.innerHTML = 45;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});
+
+minute60.addEventListener("click", e => {
+    countdownMinutes.innerHTML = 60;
+    minutes = countdownMinutes.innerHTML;
+    time = parseInt(countdownMinutes.innerHTML) * 60 + parseInt(countdownSeconds.innerHTML);
+});

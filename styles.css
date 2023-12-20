@@ -43,3 +43,8 @@ h1 {
     background-color: rgba(200, 200, 200);
 }
 
+.quickAccess {
+    display: flex;
+    justify-content: center;
+    margin: 5em;
+}
